@@ -1,21 +1,21 @@
 #!/bin/bash
-#PBS -M brandao.marcelo@gmail.com
+#PBS -M [your email]
 #PBS -m abe
 #PBS -N ST_KBPlate4
 #PBS -l nodes=1:ppn=16
 #PBS -q default
 #PBS -j oe
-#PBS -o /share/thunderstorm/users/mmbrand/Karina/Stacks/JOBS/Stacks4.out
+#PBS -o /PATH/TO/Stacks/JOBS/Stacks4.out
 
 ############
 # Variables
 ############
-# qsub -N ST_KBPlate1 -o /share/thunderstorm/users/mmbrand/Karina/Stacks/JOBS/DMPLX1.out -v "PLATENAME="KBPlate1"" run_stacks_DMPLX.sh
+# qsub -N ST_KBPlate1 -o /PATH/TO/Stacks/JOBS/DMPLX1.out -v "PLATENAME="KBPlate1"" run_stacks_DMPLX.sh
 # PLATENAME="KBPlate4"
-RUNDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/"
-READSDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/READS"
-OUTDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/PROC_READS6/"
-BCDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/Barcodes_files/"
+RUNDIR="/PATH/TO/Stacks/"
+READSDIR="/PATH/TO/Stacks/READS"
+OUTDIR="/PATH/TO/Stacks/PROC_READS6/"
+BCDIR="/PATH/TO/Stacks/Barcodes_files/"
 LOCALDIR="/state/partition1/"
 
 ################
@@ -59,7 +59,7 @@ echo $LD_LIBRARY_PATH
 LD_LIBRARY_PATH=/share/programs/gcc/6.1.0/lib/:/share/programs/gcc/6.1.0/lib64/:$LD_LIBRARY_PATH 
 
 
-/home/mmbrand/programs/stacks/stacks-1.40/process_radtags -t 90 -i gzfastq -p $LOCALDIR$PLATENAME -o $OUTDIR$PLATENAME -b $BCDIR/$PLATENAME.txt --renz_1 mspI  --renz_2 pstI --adapter_1 CCTACACGACGCTCTTCCGATCT -E phred33 -r -c -q --disable_rad_check
+~/programs/stacks/stacks-1.40/process_radtags -t 90 -i gzfastq -p $LOCALDIR$PLATENAME -o $OUTDIR$PLATENAME -b $BCDIR/$PLATENAME.txt --renz_1 mspI  --renz_2 pstI --adapter_1 CCTACACGACGCTCTTCCGATCT -E phred33 -r -c -q --disable_rad_check
 # ~/programs/stacks/bin/process_radtags -t 90 -i gzfastq -p $LOCALDIR$PLATENAME -o $OUTDIR$PLATENAME -b $BCDIR/$PLATENAME.txt --renz_1 mspI  --renz_2 pstI --adapter_1 CCTACACGACGCTCTTCCGATCT -E phred33 -r -c -q --disable_rad_check
 # ~/programs/stacks/bin/process_radtags -i gzfastq -p $LOCALDIR$PLATENAME -o $OUTDIR$PLATENAME -b $BCDIR/$PLATENAME.txt --renz_1 mspI  --renz_2 pstI -E phred33 -r -c -q --disable_rad_check
 rm -rf $LOCALDIR$PLATENAME

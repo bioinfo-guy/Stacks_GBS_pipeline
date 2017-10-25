@@ -5,13 +5,12 @@
 #PBS -N SSTACKS
 #PBS -q default
 #PBS -j oe
-#PBS -o /share/thunderstorm/users/mmbrand/Karina/Stacks/JOBS/OUT/sstacks.out
+#PBS -o /PATH/TO/Stacks/JOBS/OUT/sstacks.out
 
-RUNDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/RESULTS6_T90"
-OUTDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/RESULTS6_T90"
+RUNDIR="/PATH/TO/Stacks/RESULTS6_T90"
+OUTDIR="/PATH/TO/Stacks/RESULTS6_T90"
 pPARAM=$PBS_NP
 
-#Removi 11 amostras MG20_16; MG20_17; GO30_10; GO30_2 ;MG20_19 ;GO30_27 ;RS16_27 ;A_RS28 ;RS16_16 ;RS17_3 ;A_RS21
 
 USTACKS_CMMD=(A_RS1
 A_RS10

@@ -5,9 +5,9 @@
 #PBS -q default
 #PBS -j oe
 #PBS -t 2-12
-#PBS -o /home/mmbrand/thunderstorm/Karina/Stacks/JOBS/OUT/Structure.out
+#PBS -o /PATH/TO/JOBS/OUT/Structure.out
 
-cd /home/mmbrand/thunderstorm/Karina/Stacks/Structure/
+cd /PATH/TO/Structure/
 
 T=1  #do not change
 R=1  #do not change
@@ -21,7 +21,7 @@ while [ $R -le $E ]
 do
     #run the K using $PBS_ARRAYID
     if [ $T -le $NP ]; then
-   echo "Rodando rep $R thread $T"
+   echo "Running rep $R thread $T"
    ~/programs/structure/structure -m $mainparams -K $PBS_ARRAYID -e $extraparams -i $INFILE -o ${infile}_k$PBS_ARRAYID\_rep$R > output_k$PBS_ARRAYID\_rep$R.txt &
    T=$((T+1))
    R=$((R+1))

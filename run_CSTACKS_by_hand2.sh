@@ -1,14 +1,14 @@
 #!/bin/bash
-#PBS -M brandao.marcelo@gmail.com 
+#PBS -M [your email]
 #PBS -m abe
 #PBS -l nodes=1:ppn=16
 #PBS -l walltime=350:00:00
 #PBS -N CSTACKS
 #PBS -q default
 #PBS -j oe
-#PBS -o /share/thunderstorm/users/mmbrand/Karina/Stacks/JOBS/OUT/cstacks_T90.out
+#PBS -o /PATH/TO/Stacks/JOBS/OUT/cstacks_T90.out
 
-OUTDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/RESULTS6_T90" # same as USTACKS
+OUTDIR="/PATH/TO/Stacks/RESULTS6_T90" # same as USTACKS
 pPARAM=$PBS_NP
 nPARAM=1
 k_lenPARAM=10
@@ -367,4 +367,4 @@ PATH=/share/programs/gcc/6.1.0/bin/:$PATH
 echo $LD_LIBRARY_PATH
 LD_LIBRARY_PATH=/share/programs/gcc/6.1.0/lib/:/share/programs/gcc/6.1.0/lib64/:$LD_LIBRARY_PATH 
 
-/home/mmbrand/programs/stacks/stacks-1.40/cstacks -p $pPARAM -b 5 -n $nPARAM -o $OUTDIR --k_len $k_lenPARAM $samp
+~/programs/stacks/stacks-1.40/cstacks -p $pPARAM -b 5 -n $nPARAM -o $OUTDIR --k_len $k_lenPARAM $samp

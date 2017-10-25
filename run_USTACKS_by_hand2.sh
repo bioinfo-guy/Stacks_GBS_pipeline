@@ -5,10 +5,10 @@
 #PBS -N USTACKS
 #PBS -q default
 #PBS -j oe
-#PBS -o /share/thunderstorm/users/mmbrand/Karina/Stacks/JOBS/OUT/ustacks_T90.out
+#PBS -o /PATH/TO/Stacks/JOBS/OUT/ustacks_T90.out
 
-PROCDIR="/home/mmbrand/thunderstorm/Karina/Stacks/PROC_READS6"
-OUTDIR="/share/thunderstorm/users/mmbrand/Karina/Stacks/RESULTS6_T90"
+PROCDIR="/PATH/TO/PROC_READS6"
+OUTDIR="/PATH/TO/Stacks/RESULTS6_T90"
 mPARAM=5
 pPARAM=$PBS_NP
 MPARAM=2
