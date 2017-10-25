@@ -1,11 +1,13 @@
 # Stacks GBS pipeline
-A set of job submission scripts to run STACKS (http://catchenlab.life.illinois.edu/stacks/) on a computer cluster with TORQUE/MAUI scheduler. 
-#Motivation
+A set of job submission scripts to run STACKS (http://catchenlab.life.illinois.edu/stacks/) on a computer cluster with TORQUE/MAUI scheduler.
+
+# Motivation
 All the files were used to generate GBS data analyses published on the manuscript "Markers associated to host plant and host related strains and the genetic structure of Brazilian populations of Spodoptera frugiperda (Lepidoptera, Noctuidae)" submitted for publication.
-#License
+
+# License
 All the files are available under Attribution-ShareAlike 2.0 license and, please, read https://creativecommons.org/licenses/by-sa/2.0/ if you want to use them.
 
-#FILE DESCRIPTIONS
+# FILE DESCRIPTIONS
 
 -- ALL_stacks_run.sh
 All commands used to run STACKS
@@ -26,6 +28,7 @@ TORQUE job file to run CSTACKS. Must run with qsub -t 1-[number of individuals] 
 TORQUE job file to run POPULATIONS. You might edit few POPULATIONS parameters within the file.
 
 -- run_SSTACKS_by_hand2.sh
+
 TORQUE job file to run SSTACKS. Must run with qsub -t 1-[number of populations] option. It will distribute the execution among all available nodes.
 
 -- run_stacks_DMPLX.sh
